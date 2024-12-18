@@ -37,39 +37,49 @@ namespace TreesLibrary
                     Data = "Do you have an experience in app development ? ",
 
                     Children =
-                [
-                new BinaryTreeNode<string>()
-{
-                Data = "Have you worked as a developer for 5 + years ? ",
+                    [
+                    new BinaryTreeNode<string>()
+                        {
+                        Data = "Have you worked as a developer for 5 + years ? ",
 
-                Children =
-                [
-                new() { Data = "Apply as a senior developer" },
+                        Children =
+                            [
+                            new() { Data = "Apply as a senior developer" },
 
-                new() { Data = "Apply as a middle developer" }
-                ]
-                },
-                new BinaryTreeNode<string>()
-                {
-                Data = "Have you completed a university?",
-                Children =
-                [
-                new() { Data = "Apply as a junior developer" },
+                            new() { Data = "Apply as a middle developer" }
+                            ]
+                        },
+                    new BinaryTreeNode<string>()
+                        {
+                        Data = "Have you completed a university?",
+                        Children =
+                            [
+                            new() { Data = "Apply as a junior developer" },
 
-                new BinaryTreeNode<string>()
-                {
-                Data = "Will you find some time during the semester?",
+                            new BinaryTreeNode<string>()
+                                {
+                                Data = "Have you completed MSSA?",
 
-                Children =
-                [
-                new() { Data = "Apply for long-time internship" },
+                                Children =
+                                    [
+                                    new() { Data = "Apply for entry-level developer" },
 
-                new() { Data = "Apply for summer internship" }
-                ]
-                }
-                ]
-                }
-                ]
+                                    new BinaryTreeNode<string>() 
+                                        { 
+                                        Data = "Have you applied for MSSA?",
+
+                                        Children =
+                                        [
+                                            new() {Data="Wait for acceptance"},
+
+                                            new() {Data = "Apply for next MSSA cycle"}
+                                        ]
+                                    }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 };
                 tree.Count = 9;
 
