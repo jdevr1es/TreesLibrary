@@ -7,26 +7,29 @@ namespace TreesLibrary
         static void Main(string[] args)
         {
 
-            BinaryTree<string> tree = GetTree();
-            BinaryTreeNode<string>? node = tree.Root;
-            while (node != null)
-            {
-                if (node.Left != null && node.Right != null)
-                {
-                    Console.WriteLine(node.Data);
-                    node = Console.ReadKey(true).Key switch
-                    {
-                        ConsoleKey.Y => node.Left,
-                        ConsoleKey.N => node.Right,
-                        _ => node
-                    };
-                }
-                else
-                {
-                    Console.WriteLine(node.Data);
-                    node = null;
-                }
-            }
+
+
+
+            //BinaryTree<string> tree = GetTree();
+            //BinaryTreeNode<string>? node = tree.Root;
+            //while (node != null)
+            //{
+            //    if (node.Left != null && node.Right != null)
+            //    {
+            //        Console.WriteLine(node.Data);
+            //        node = Console.ReadKey(true).Key switch
+            //        {
+            //            ConsoleKey.Y => node.Left,
+            //            ConsoleKey.N => node.Right,
+            //            _ => node
+            //        };
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(node.Data);
+            //        node = null;
+            //    }
+            //}
 
             BinaryTree<string> GetTree()
             {
