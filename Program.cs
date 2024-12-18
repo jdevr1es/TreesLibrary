@@ -7,55 +7,78 @@ namespace TreesLibrary
         static void Main(string[] args)
         {
 
+            BinaryTree<string> tree = GetTree();
+            BinaryTreeNode<string>? node = tree.Root;
+            while (node != null)
+            {
+                if (node.Left != null && node.Right != null)
+                {
+                    Console.WriteLine(node.Data);
+                    node = Console.ReadKey(true).Key switch
+                    {
+                        ConsoleKey.Y => node.Left,
+                        ConsoleKey.N => node.Right,
+                        _ => node
+                    };
+                }
+                else
+                {
+                    Console.WriteLine(node.Data);
+                    node = null;
+                }
+            }
 
+            BinaryTree<string> GetTree()
+            {
+                BinaryTree<string> tree = new();
 
+                tree.Root = new BinaryTreeNode<string>()
+                {
+                    Data = "Do you have an experience in app development ? ",
 
-            Tree<int> tree = new()
-            { Root = new() { Data = 100 } };
+                    Children =
+                [
+                new BinaryTreeNode<string>()
+{
+                Data = "Have you worked as a developer for 5 + years ? ",
 
-            tree.Root.Children =
-            [
-            new() { Data = 50, Parent = tree.Root },
-            new() { Data = 1, Parent = tree.Root },
-            new() { Data = 150, Parent = tree.Root }
-            ];
+                Children =
+                [
+                new() { Data = "Apply as a senior developer" },
 
-            tree.Root.Children[2].Children =
-            [
-            new() { Data = 30, Parent = tree.Root.Children[2] },
-            new() { Data = 5, Parent = tree.Root.Children[2] },
-            new() { Data = 11, Parent = tree.Root.Children[2] }
-            ];
+                new() { Data = "Apply as a middle developer" }
+                ]
+                },
+                new BinaryTreeNode<string>()
+                {
+                Data = "Have you completed a university?",
+                Children =
+                [
+                new() { Data = "Apply as a junior developer" },
 
-            tree.Root.Children[2].Children[0].Children =
-            [
-            new() { Data = 96, Parent = tree.Root.Children[2].Children[0] },
-            new() { Data = 9, Parent = tree.Root.Children[2].Children[0] }
-            ];
+                new BinaryTreeNode<string>()
+                {
+                Data = "Will you find some time during the semester?",
 
-            tree.Root.Children[1].Children =
-            [
-            new() { Data = 70, Parent = tree.Root.Children[1] },
-            new() { Data = 61, Parent = tree.Root.Children[1] }
-            ];
+                Children =
+                [
+                new() { Data = "Apply for long-time internship" },
 
-            tree.Root.Children[0].Children =
-            [
-            new() { Data = 12, Parent = tree.Root.Children[0] }
-            ];
+                new() { Data = "Apply for summer internship" }
+                ]
+                }
+                ]
+                }
+                ]
+                };
+                tree.Count = 9;
 
-            tree.Root.Children[0].Children[0].Children =
-            [
-            new() {Data = 45, Parent=tree.Root.Children[0].Children[0]},
-            new() {Data = 21, Parent=tree.Root.Children[0].Children[0]}
-            ];
-
-            tree.Root.Children[0].Children[0].Children[1].Children =
-            [
-            new(){Data =6, Parent = tree.Root.Children[0].Children[0].Children[1]}
-            ];
+                return tree;
+            }
 
         }
+
+
     }
 
 
