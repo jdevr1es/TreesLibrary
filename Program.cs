@@ -6,6 +6,10 @@ namespace TreesLibrary
     {
         static void Main(string[] args)
         {
+
+
+
+
             Tree<int> tree = new()
             { Root = new() { Data = 100 } };
 
