@@ -9,17 +9,17 @@ namespace TreesLibrary
     public class BinarySearchTree<T> : BinaryTree<T> 
         where T : IComparable
     {
-        public bool Contains(T data)
+        public BinaryTreeNode<T> Contains(T data)
         {
             BinaryTreeNode<T>? node = Root;
             while (node != null)
             {
                 int result = data.CompareTo(node.Data);
-                if (result == 0) { return true; }
+                if (result == 0) { return node; }
                 else if (result < 0) { node = node.Left; }
                 else { node = node.Right; }
             }
-            return false;
+            return null;
         }
     }
 }
